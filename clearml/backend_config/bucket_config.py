@@ -59,7 +59,7 @@ class S3BucketConfig(object):
         self.profile = profile
 
     def is_valid(self):
-        return (self.key and self.secret) or self.use_credentials_chain
+        return (self.key and self.secret) or self.use_credentials_chain or self.profile
 
     def get_bucket_host(self):
         return self.bucket, self.host

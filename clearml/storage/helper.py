@@ -2117,7 +2117,7 @@ class StorageHelper(object):
                 extra_args=self._conf.extra_args,
             )
 
-            if not self._conf.use_credentials_chain:
+            if not self._conf.use_credentials_chain and not self._conf.profile:
                 if not self._conf.key or not self._conf.secret:
                     raise ValueError(
                         "Missing key and secret for S3 storage access (%s)" % base_url
